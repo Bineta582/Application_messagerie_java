@@ -8,18 +8,15 @@ import java.time.LocalDateTime;
 @Table(name = "messages")
 public class Message {
 
-
     public enum Statut {
         ENVOYE,
         RECU,
         LU
     }
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "sender_id", nullable = false)
@@ -39,7 +36,6 @@ public class Message {
     @Column(name = "statut", nullable = false)
     private Statut statut = Statut.ENVOYE;
 
-
     public Message() {}
 
     public Message(User sender, User receiver, String contenu) {
@@ -49,7 +45,6 @@ public class Message {
         this.dateEnvoi = LocalDateTime.now();
         this.statut = Statut.ENVOYE;
     }
-
 
     public Long getId() { return id; }
 
@@ -76,4 +71,3 @@ public class Message {
                 + ", statut=" + statut + "}";
     }
 }
-

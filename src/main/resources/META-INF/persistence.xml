@@ -9,14 +9,14 @@
         Une "persistence-unit" = la configuration de ta connexion BDD.
         Hibernate va lire ce fichier pour savoir comment se connecter à PostgreSQL.
     -->
-    <persistence-unit name="Messagerie" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="g2-messagerie" transaction-type="RESOURCE_LOCAL">
 
         <!-- On indique à Hibernate d'utiliser le driver PostgreSQL -->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!-- Les classes qui correspondent à des tables en base -->
-        <class>sn.messagerie.app_messagerie.model.User</class>
-        <class>sn.messagerie.app_messagerie.model.Message</class>
+        <class>g2.model.User</class>
+        <class>g2.model.Message</class>
 
         <properties>
             <!-- URL de connexion : jdbc:postgresql://HOST:PORT/NOM_BASE -->

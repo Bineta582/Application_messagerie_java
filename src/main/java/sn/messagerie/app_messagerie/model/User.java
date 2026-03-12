@@ -8,16 +8,13 @@ import java.time.LocalDateTime;
 @Table(name = "users")
 public class User {
 
-
     public enum Role {
         ORGANISATEUR, MEMBRE, BENEVOLE
     }
 
-
     public enum Status {
         ONLINE, OFFLINE
     }
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +26,7 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
-    @Enumerated(EnumType.STRING) // stocke "MEMBRE" en base, pas "1"
+    @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false)
     private Role role;
 
@@ -40,8 +37,8 @@ public class User {
     @Column(name = "date_creation", nullable = false)
     private LocalDateTime dateCreation = LocalDateTime.now();
 
-
-    public User() {}
+    public User() {
+    }
 
     public User(String username, String password, Role role) {
         this.username = username;
@@ -50,7 +47,6 @@ public class User {
         this.status = Status.OFFLINE;
         this.dateCreation = LocalDateTime.now();
     }
-
 
     public Long getId() { return id; }
 
