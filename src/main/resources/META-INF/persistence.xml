@@ -5,49 +5,37 @@
              https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
 
-    <!--
-        Une "persistence-unit" = la configuration de ta connexion BDD.
-        Hibernate va lire ce fichier pour savoir comment se connecter à PostgreSQL.
-    -->
     <persistence-unit name="g2-messagerie" transaction-type="RESOURCE_LOCAL">
 
-        <!-- On indique à Hibernate d'utiliser le driver PostgreSQL -->
+
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <!-- Les classes qui correspondent à des tables en base -->
+
         <class>g2.model.User</class>
         <class>g2.model.Message</class>
 
         <properties>
-            <!-- URL de connexion : jdbc:postgresql://HOST:PORT/NOM_BASE -->
-            <!-- ⚠️ Change "messagerie_db" par le nom de ta base PostgreSQL -->
+
             <property name="jakarta.persistence.jdbc.url"
                       value="jdbc:postgresql://localhost:5432/messagerie_db"/>
 
-            <!-- ⚠️ Change par ton utilisateur PostgreSQL (souvent "postgres") -->
+
             <property name="jakarta.persistence.jdbc.user" value="postgres"/>
 
-            <!-- ⚠️ Change par ton mot de passe PostgreSQL -->
+
             <property name="jakarta.persistence.jdbc.password" value="passer"/>
 
             <property name="jakarta.persistence.jdbc.driver"
                       value="org.postgresql.Driver"/>
 
-            <!--
-                hibernate.hbm2ddl.auto :
-                - "create"      : recrée les tables à chaque démarrage (dev)
-                - "update"      : met à jour les tables sans supprimer les données
-                - "validate"    : vérifie que les tables existent sans les modifier
-                - "create-drop" : crée puis supprime à la fin (pour les tests)
-                Pour commencer, on utilise "update"
-            -->
+
             <property name="hibernate.hbm2ddl.auto" value="update"/>
 
-            <!-- Affiche les requêtes SQL dans la console (utile pour déboguer) -->
+
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
 
-            <!-- Indique à Hibernate qu'on utilise PostgreSQL -->
+
             <property name="hibernate.dialect"
                       value="org.hibernate.dialect.PostgreSQLDialect"/>
         </properties>

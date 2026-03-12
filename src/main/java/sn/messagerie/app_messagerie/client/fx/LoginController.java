@@ -130,7 +130,7 @@ public class LoginController implements Initializable {
             primaryStage.setMinHeight(700);
 
         } catch (IOException e) {
-            setStatus("❌ Erreur lors de l'ouverture du chat : " + e.getMessage(), true);
+            setStatus(" Erreur lors de l'ouverture du chat : " + e.getMessage(), true);
         }
     }
 
