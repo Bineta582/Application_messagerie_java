@@ -12,7 +12,7 @@
 
 
 
-<VBox alignment="CENTER" prefHeight="800.0" prefWidth="1200.0" spacing="15" style="-fx-background-color: #2b2d42; -fx-padding: 40;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sn.messagerie.app_messagerie.client.fx.RegisterController">
+<VBox alignment="CENTER" prefHeight="800.0" prefWidth="1200.0" spacing="15" style="-fx-background-color: #2b2d42; -fx-padding: 40;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sn.messagerie.app_messagerie.client.fx.RegisterController">
 
 
     <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #ef233c;" text="💬 Messagerie" />

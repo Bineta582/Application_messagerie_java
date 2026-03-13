@@ -41,7 +41,7 @@ public class LoginController implements Initializable {
         try {
             client.connect();
         } catch (IOException e) {
-            setStatus("❌ Impossible de se connecter au serveur. Vérifiez qu'il est démarré.", true);
+            setStatus("Impossible de se connecter au serveur. Vérifiez qu'il est démarré.", true);
             loginButton.setDisable(true);
             return;
         }
@@ -49,7 +49,7 @@ public class LoginController implements Initializable {
         client.setOnMessageReceived(this::handleServerMessage);
 
         client.setOnDisconnected(() -> Platform.runLater(() ->
-                setStatus("❌ Connexion au serveur perdue.", true)
+                setStatus("Connexion au serveur perdue.", true)
         ));
     }
 
@@ -64,7 +64,7 @@ public class LoginController implements Initializable {
         String password = loginPasswordField.getText();
 
         if (username.isEmpty() || password.isEmpty()) {
-            setStatus("⚠️ Veuillez remplir tous les champs.", true);
+            setStatus("Veuillez remplir tous les champs.", true);
             return;
         }
 
@@ -88,7 +88,7 @@ public class LoginController implements Initializable {
             primaryStage.setTitle("Messagerie – Inscription");
             primaryStage.setScene(registerScene);
         } catch (IOException e) {
-            setStatus("❌ Erreur lors de l'ouverture de la page d'inscription : " + e.getMessage(), true);
+            setStatus("Erreur lors de l'ouverture de la page d'inscription : " + e.getMessage(), true);
         }
     }
 
@@ -105,7 +105,7 @@ public class LoginController implements Initializable {
                     openChatScreen(username, role);
                 }
                 case Protocol.LOGIN_ERROR -> {
-                    setStatus("❌ " + (parts.length > 1 ? parts[1] : "Erreur de connexion"), true);
+                    setStatus(" " + (parts.length > 1 ? parts[1] : "Erreur de connexion"), true);
                     loginButton.setDisable(false);
                 }
             }

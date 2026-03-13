@@ -9,7 +9,7 @@ import java.util.function.Consumer;
 
 public class Client {
 
-    private static String HOST = "192.168.1.9";
+    private static String HOST = "localhost";
     private static int PORT = 12345;
 
     static {
